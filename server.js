@@ -7,7 +7,8 @@
 */
 
 var express = require('express'),
-    config = require(__dirname + '/config');
+    config = require(__dirname + '/config'),
+    faker = require('faker');
 
 /*
 -----------------------------------------------------------------------------------
@@ -42,4 +43,6 @@ function redirectToIndex(req, res) {
 |
 -----------------------------------------------------------------------------------
 */
+
+
 
