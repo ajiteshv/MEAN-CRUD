@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/theodor-lindekaer/MEAN-CRUD/issues"
   },
-  "homepage": "https://github.com/theodor-lindekaer/MEAN-CRUD"
+  "homepage": "https://github.com/theodor-lindekaer/MEAN-CRUD",
+  "dependencies": {
+    "express": "^4.11.2"
+  }
 }
