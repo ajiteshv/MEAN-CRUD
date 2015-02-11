@@ -31,14 +31,15 @@ server.listen(config.port);
 
 server.get('*', redirectToIndex);
 
+function redirectToIndex(req, res) {
+  res.redirect('/');
+}
+
 /*
 -----------------------------------------------------------------------------------
 |
-| Functions
+| API setup
 |
 -----------------------------------------------------------------------------------
 */
 
-function redirectToIndex(req, res) {
-  res.redirect('/');
-}
