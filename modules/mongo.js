@@ -6,7 +6,7 @@
 -----------------------------------------------------------------------------------
 */
 
-var mongo = require('mongoose');
+var mongoose = require('mongoose');
 
 /*
 -----------------------------------------------------------------------------------
@@ -16,7 +16,19 @@ var mongo = require('mongoose');
 -----------------------------------------------------------------------------------
 */
 
+mongoose.connect('mongodb://localhost/MEAN-CRUD');
 
+var Schema   = mongoose.Schema
+    ObjectId = Schema.ObjectId;
+ 
+var schema = new Schema({
+  id       : ObjectId,
+  firstname : String,
+  lastname  : String,
+  email     : String
+});
+
+var User = mongoose.model('User', schema);
 
 /*
 -----------------------------------------------------------------------------------
@@ -26,3 +38,6 @@ var mongo = require('mongoose');
 -----------------------------------------------------------------------------------
 */
 
+module.exports = {
+  User: User
+}
