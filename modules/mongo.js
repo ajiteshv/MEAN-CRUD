@@ -6,7 +6,8 @@
 -----------------------------------------------------------------------------------
 */
 
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    config   = require(__dirname + '/config');
 
 /*
 -----------------------------------------------------------------------------------
@@ -16,7 +17,7 @@ var mongoose = require('mongoose');
 -----------------------------------------------------------------------------------
 */
 
-mongoose.connect('mongodb://localhost/MEAN-CRUD');
+mongoose.connect('mongodb://' + config.db.host + '/' + config.db.database);
 
 var Schema   = mongoose.Schema
     ObjectId = Schema.ObjectId;
