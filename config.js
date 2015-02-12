@@ -8,4 +8,10 @@
 
 module.exports = {
   port: 3000
+  db: {
+    host: 'localhost',
+    name: 'MEAN-CRUD',
+    user: 'root',
+    pass: ''
+  }
 }
