@@ -16,6 +16,24 @@ var meanApp = angular.module('meanApp', ['ngResource']);
 -----------------------------------------------------------------------------------
 */
 
-meanApp.controller('mainCtrl', function($scope) {
+meanApp.controller('mainCtrl', function($scope, init) {
+
+  console.log();
+  
+});
+
+/*
+-----------------------------------------------------------------------------------
+|
+| Factory
+|
+-----------------------------------------------------------------------------------
+*/
+
+meanApp.service('init', function($http) {
+
+  $.get('/api/contacts').then(function(result) {
+    return result;
+  });
   
 });

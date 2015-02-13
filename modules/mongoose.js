@@ -7,7 +7,7 @@
 */
 
 var mongoose = require('mongoose'),
-    config   = require(__dirname + '/config');
+    config   = require(__root + '/config');
 
 /*
 -----------------------------------------------------------------------------------
@@ -17,7 +17,7 @@ var mongoose = require('mongoose'),
 -----------------------------------------------------------------------------------
 */
 
-mongoose.connect('mongodb://' + config.db.host + '/' + config.db.database);
+connection = mongoose.connect('mongodb://' + config.db.host + '/' + config.db.name);
 
 var Schema   = mongoose.Schema
     ObjectId = Schema.ObjectId;
@@ -40,5 +40,6 @@ var User = mongoose.model('User', schema);
 */
 
 module.exports = {
+  connection: connection,
   User: User
 }
