@@ -16,7 +16,9 @@ var meanApp = angular.module('meanApp', ['ngResource']);
 -----------------------------------------------------------------------------------
 */
 
-meanApp.controller('mainCtrl', function($scope, init) {
+meanApp.controller('mainCtrl', function($scope, $http, init) {
+
+  $scope.newContact = {};
 
   // Populate the applicationa with all contacts
   init.getAllContacts(function(response) {
@@ -24,8 +26,11 @@ meanApp.controller('mainCtrl', function($scope, init) {
     $scope.$apply();
   });
 
+  // Add new contact to database
   $scope.addContact = function() {
-    
+    $.post('/api/contacts', $scope.newContact);
+    $scope.contacts.push($scope.newContact);
+    $scope.newContact = {};
   }
 
 });
@@ -39,7 +44,6 @@ meanApp.controller('mainCtrl', function($scope, init) {
 */
 
 meanApp.factory('init', function($http) {
-
   return {
     getAllContacts: function(callback) {
       $.get('/api/contacts').success(function(response) {
@@ -47,5 +51,4 @@ meanApp.factory('init', function($http) {
       });
     }
   }
- 
 });
