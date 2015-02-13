@@ -16,21 +16,35 @@ var meanApp = angular.module('meanApp', ['ngResource']);
 -----------------------------------------------------------------------------------
 */
 
-meanApp.controller('mainCtrl', function($scope, $http, init) {
+meanApp.controller('mainCtrl', function($scope, $http, misc) {
 
-  $scope.newContact = {};
+  // Contact model
+  $scope.newContact = {
+    firstname: null,
+    lastname: null,
+    email: null
+  };
 
   // Populate the applicationa with all contacts
-  init.getAllContacts(function(response) {
+  misc.getAllContacts(function(response) {
     $scope.contacts = response;
     $scope.$apply();
   });
 
   // Add new contact to database
   $scope.addContact = function() {
-    $.post('/api/contacts', $scope.newContact);
-    $scope.contacts.push($scope.newContact);
-    $scope.newContact = {};
+    
+    var formFields = [];
+    for(key in $scope.newContact) {
+      formFields.push($scope.newContact[key]);
+    }   
+
+    if (misc.isValid(formFields)) {
+      $.post('/api/contacts', $scope.newContact);
+      $scope.contacts.push($scope.newContact);
+      $scope.newContact = {};
+    }
+
   }
 
 });
@@ -43,12 +57,21 @@ meanApp.controller('mainCtrl', function($scope, $http, init) {
 -----------------------------------------------------------------------------------
 */
 
-meanApp.factory('init', function($http) {
+meanApp.factory('misc', function($http) {
   return {
     getAllContacts: function(callback) {
       $.get('/api/contacts').success(function(response) {
         callback(response);
       });
+    },
+    isValid: function(formFields) {
+      for (i = 0; i < formFields.length; i++) {
+        var arg = formFields[i];
+        if (arg == null || arg == undefined || arg == '') {
+          return false;
+        }
+      }
+      return true;
     }
   }
 });
