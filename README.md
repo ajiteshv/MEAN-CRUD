@@ -1,3 +1,4 @@
+![alt text][banner]
 [banner]: https://cloud.githubusercontent.com/assets/4806217/6219181/87dbe5c6-b626-11e4-90f0-a9f461a83cb8.png "Banner"
 
 # MEAN-CRUD
