@@ -105,12 +105,18 @@ header {
 
   .contact {
     position: relative;
-    width: 25%;
+    width: 40%;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     margin: 15px;
     padding: 8px;
+
+    @media (min-width: 600px) {
+      & {
+        width: 25%;
+      }
+    }
 
     .contact-email {
       color: #898989;

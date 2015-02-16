@@ -41,5 +41,6 @@ var User = mongoose.model('User', schema);
 
 module.exports = {
   connection: connection,
-  User: User
+  User: User,
+  ObjectId: ObjectId
 }

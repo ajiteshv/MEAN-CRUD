@@ -11,7 +11,8 @@ global.__root = __dirname;
 var express    = require('express'),
     bodyParser = require('body-parser'),
     config     = require(__root + '/config'),
-    User       = require(__root + '/modules/mongoose').User;
+    User       = require(__root + '/modules/mongoose').User,
+    ObjectId   = require(__root + '/modules/mongoose').ObjectId;
 
 /*
 -----------------------------------------------------------------------------------
@@ -60,10 +61,12 @@ server.post('/api/contacts', function(req, res) {
 
 // Delete contact
 server.delete('/api/contacts/:id', function(req, res) {
-  User.remove({ _id: ObjectId(req.params.id) }, function(err, user) {
-    if (err) res.send("ERROR");
-    res.send(user);
+
+  User.remove({ '_id': ObjectId(req.params.id) }, function(err, removed) {
+    if (err) res.send(error);
+    res.send(removed);
   });
+
 })
 
 /*
