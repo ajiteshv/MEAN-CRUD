@@ -47,8 +47,11 @@ meanApp.controller('mainCtrl', function($scope, $http, misc) {
 
   }
 
-  $scope.deleteContact = function() {
-    
+  $scope.deleteContact = function($index) {
+    var ObjectId = $scope.contacts[$index]._id;
+    $http.delete('/api/contacts/' + ObjectId);
+    $scope.contacts.splice($index, 1);
+    $scope.$apply();
   }
 
 });
