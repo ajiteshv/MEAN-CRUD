@@ -104,6 +104,7 @@ header {
   padding: 30px;
 
   .contact {
+    position: relative;
     width: 300px;
     background-color: #fff;
     border-radius: 4px;
@@ -113,6 +114,21 @@ header {
 
     .contact-email {
       color: #898989;
+    }
+
+    .contact-delete {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      background-color: #D64541;
+      color: #fff;
+      line-height: 20px;
+      font-size: 10px;
+      text-align: center;
+      cursor: pointer;
     }
   }
 }

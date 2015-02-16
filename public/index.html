@@ -34,8 +34,9 @@
 
   <div class="contacts">
     <div ng-repeat="contact in contacts" class="contact">
-       <p><strong>{{ contact.lastname }}</strong>, {{ contact.firstname }}</p>
-       <p class="contact-email">{{ contact.email }}</p>
+      <div ng-click="deleteContact()" class="contact-delete">X</div>
+      <p><strong>{{ contact.lastname }}</strong>, {{ contact.firstname }}</p>
+      <p class="contact-email">{{ contact.email }}</p>
     </div>
   </div>
 

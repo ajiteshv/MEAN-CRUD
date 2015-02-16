@@ -59,6 +59,12 @@ server.post('/api/contacts', function(req, res) {
 });
 
 // Delete contact
+server.delete('/api/contacts/:id', function(req, res) {
+  User.remove({ id: ObjectId(req.params.id) }, function(err, user) {
+    if (err) res.send(err);
+    res.send(user);
+  })
+})
 
 /*
 -----------------------------------------------------------------------------------

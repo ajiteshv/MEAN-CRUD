@@ -47,6 +47,10 @@ meanApp.controller('mainCtrl', function($scope, $http, misc) {
 
   }
 
+  $scope.deleteContact = function() {
+    
+  }
+
 });
 
 /*
