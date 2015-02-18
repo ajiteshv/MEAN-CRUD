@@ -29,7 +29,7 @@ var schema = new Schema({
   email     : String
 });
 
-var User = mongoose.model('User', schema);
+var Contact = mongoose.model('Contact', schema);
 
 /*
 -----------------------------------------------------------------------------------
@@ -41,6 +41,6 @@ var User = mongoose.model('User', schema);
 
 module.exports = {
   connection: connection,
-  User: User,
+  Contact: Contact,
   ObjectId: ObjectId
 }

@@ -11,7 +11,7 @@ global.__root = __dirname;
 var express    = require('express'),
     bodyParser = require('body-parser'),
     config     = require(__root + '/config'),
-    User       = require(__root + '/modules/mongoose').User,
+    Contact       = require(__root + '/modules/mongoose').Contact,
     ObjectId   = require(__root + '/modules/mongoose').ObjectId;
 
 /*
@@ -39,21 +39,21 @@ console.log("Listening on port " + config.port);
 
 // Get all contacts
 server.get('/api/contacts', function(req, res) {
-  User.find(function(err, users) {
+  Contact.find(function(err, contacts) {
     if (err) res.send(err);
-    res.json(users);
+    res.json(contacts);
   });
 });
 
 // Post new contact
 server.post('/api/contacts', function(req, res) {
-  var user = new User({
+  var contact = new Contact({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email
   });
 
-  user.save(function(err) {
+  contact.save(function(err) {
     if (err) res.send(err);
     res.send("Success");
   })
@@ -62,7 +62,7 @@ server.post('/api/contacts', function(req, res) {
 // Delete contact
 server.delete('/api/contacts/:id', function(req, res) {
 
-  User.findByIdAndRemove(req.params.id, null, function(err, removed) {
+  Contact.findByIdAndRemove(req.params.id, null, function(err, removed) {
     if (err) res.send(err);
     res.sendStatus(200);
   });
