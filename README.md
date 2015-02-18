@@ -8,15 +8,6 @@ Prerequisites:
 - NodeJS
 - MongoDB 
 
-To start working, clone this repository to your local machine and execute the following commands:
-
-```
-$ npm install
-$ bower install
-$ node server.js
-$ gulp
-```
-
 To configure the application to suit your setup, edit the config.js:
 
 ```javascript
@@ -30,6 +21,15 @@ To configure the application to suit your setup, edit the config.js:
     pass: ''
   }
 }
+```
+
+To start working, clone this repository to your local machine and execute the following commands:
+
+```
+$ npm install
+$ bower install
+$ node server.js
+$ gulp
 ```
 
 I strongly advice using Nodemon for NodeJS development purposes. 
