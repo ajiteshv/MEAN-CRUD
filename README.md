@@ -17,6 +17,21 @@ $ node server.js
 $ gulp
 ```
 
+To configure the application to suit your setup, edit the config.js:
+
+```javascript
+// config.js
+{
+  port: 3000,
+  db: {
+    host: 'localhost',
+    name: 'MEAN-CRUD',
+    user: 'root',
+    pass: ''
+  }
+}
+```
+
 I strongly advice using Nodemon for NodeJS development purposes. 
 
 ```
