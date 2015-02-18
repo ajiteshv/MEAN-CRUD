@@ -63,7 +63,7 @@ server.post('/api/contacts', function(req, res) {
 server.delete('/api/contacts/:id', function(req, res) {
 
   User.findByIdAndRemove(req.params.id, null, function(err, removed) {
-    if (err) res.send(error);
+    if (err) res.send(err);
     res.sendStatus(200);
   });
 
