@@ -5,8 +5,8 @@
 A simple project to demonstrate the capabilities of the MEAN stack.
 
 Prerequisites:
-- NodeJS
-- MongoDB 
+- NodeJS ([nodejs.org](http://nodejs.org/))
+- MongoDB ([mongodb.org](http://www.mongodb.org/))
 
 To configure the application to suit your setup, edit the config.js:
 
