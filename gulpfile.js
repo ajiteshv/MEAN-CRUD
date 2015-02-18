@@ -35,7 +35,7 @@ gulp.task('sass', function() {
 
 gulp.task('default', ['sass', 'browser-sync', 'reload'], function() {
     gulp.watch('./public/sass/*', ['sass']);
-    gulp.watch('./public/*', ['reload']);
+    gulp.watch('./public/*.html', ['reload']);
     gulp.watch('./public/js/*', ['reload']);
 });
 
