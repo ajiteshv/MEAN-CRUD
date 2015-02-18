@@ -37,3 +37,10 @@ I strongly advice using Nodemon for NodeJS development purposes.
 ```
 $ npm install -g nodemon
 ```
+With the application up and running you should see this:
+
+![alt text][screen]
+[screen]: https://cloud.githubusercontent.com/assets/4806217/6247959/cee2b44a-b77a-11e4-9e09-af5bf88249b9.png "Banner"
+
+Persistently CRUD your data with the MEAN Stack. Enjoy!
+
